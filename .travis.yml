@@ -21,7 +21,6 @@ install:
     - mkdir -p ${HOME}/cache/pkgs
 #LAB    - "[ ! -f ${HOME}/cache/miniconda.sh ] && wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${HOME}/cache/miniconda.sh || :"
     - "wget https://github.com/loriab/anvil/raw/master/${CONSTRUCTION} -O ${HOME}/cache/${CONSTRUCTION} || :"
-    - head -100 ${HOME}/cache/${CONSTRUCTION}
     - bash ${HOME}/cache/${CONSTRUCTION} -b -p ${CONDA_INSTALL_LOCN} && export PATH=${CONDA_INSTALL_LOCN}/bin:$PATH
 
     # Re-use the packages in the cache, and download any new ones into that location.
@@ -29,10 +28,10 @@ install:
 
     # Now do the things we need to do to install it.
 #LAB    - conda install --file requirements.txt nose mock python=${PYTHON} --yes --quiet -c conda-forge
-    - python setup.py install
+#LAB    - python setup.py install
 
 script:
-    - nosetests conda_smithy
+#LAB    - nosetests conda_smithy
     - conda list
 
 
