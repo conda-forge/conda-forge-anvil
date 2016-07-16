@@ -7,11 +7,18 @@ sudo: false
 env:
     global:
        - CONDA_INSTALL_LOCN="${HOME}/conda"
-       - CONSTRUCTION="anvil-0.1-MacOSX-x86_64.sh"  #LAB
+#       - CONSTRUCTION="anvil-0.1-MacOSX-x86_64.sh"  #LAB
+
+#-rwxr-xr-x  1 loriab  staff  25401955 Jul 16 18:17 anvil-0.1.1-py27-MacOSX-x86_64.sh
+#-rwxr-xr-x  1 loriab  staff  35652113 Jul 16 18:18 anvil-0.1.1-py34-MacOSX-x86_64.sh
+#-rwxr-xr-x  1 loriab  staff  38468113 Jul 16 18:18 anvil-0.1.1-py35-MacOSX-x86_64.sh
 
     matrix:
+        - PYTHON_STRING=py27  CONSTRUCTION="anvil-0.1.1-${PYTHON_STRING}-MacOSX-x86_64.sh"
+        - PYTHON_STRING=py34  CONSTRUCTION="anvil-0.1.1-${PYTHON_STRING}-MacOSX-x86_64.sh"
+        - PYTHON_STRING=py35  CONSTRUCTION="anvil-0.1.1-${PYTHON_STRING}-MacOSX-x86_64.sh"
 #LAB        - PYTHON=2.7
-        - PYTHON=3.5
+#LAB        - PYTHON=3.5
 
 matrix:
   include:
