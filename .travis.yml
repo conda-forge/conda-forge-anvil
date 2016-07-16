@@ -13,6 +13,10 @@ env:
 #LAB        - PYTHON=2.7
         - PYTHON=3.5
 
+matrix:
+  include:
+    - os: osx
+    
 install:
     - mkdir -p ${HOME}/cache/pkgs
 #LAB    - "[ ! -f ${HOME}/cache/miniconda.sh ] && wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${HOME}/cache/miniconda.sh || :"
