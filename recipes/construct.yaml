@@ -49,7 +49,7 @@ specs:
   - sqlite 3.13.*
   - xz 5.2.*
 
-channels:
+conda_default_channels:
   - http://conda.anaconda.org/conda-forge
   - http://repo.continuum.io/pkgs/free/
 
